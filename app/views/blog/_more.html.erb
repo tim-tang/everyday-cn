@@ -1,7 +1,7 @@
 <% @blogs.each do |blog| %>
   <div class="portfolio">
     <div class="tagline_left">
-      <h2><%= blog.title%></h2>
+      <h2><%=link_to blog.title, show_path(blog)%></h2>
       <p>
       作者: <span><%= blog.author%> |</span>
       浏览:<span><%= blog.view_count%> |</span>

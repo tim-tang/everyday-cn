@@ -3,6 +3,7 @@ EverydayCn::Application.routes.draw do
 
   controller :blog do
     get 'load/:id'=>:load, :as => :load
+    get 'show/:id'=>:show, :as => :show
   end
 
   # The priority is based upon order of creation:

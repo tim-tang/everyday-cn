@@ -13,7 +13,6 @@ module ApplicationHelper
   end
 
   def image_large(content)
-    puts content
     content.lines.grep(/http:/) do |line|
      if line.include?("[1]:")
         return line.gsub("[1]:","").strip

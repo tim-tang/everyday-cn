@@ -11,4 +11,8 @@ class BlogController < ApplicationController
     @blogs = Blog.find(:all, :from =>"/blogs/#{date}.xml")
   end
 
+  def show
+    @blog = Blog.find(:one, :from=>"/blog/#{params[:id]}.xml")
+  end
+
 end
