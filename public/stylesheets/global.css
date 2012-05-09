@@ -1,0 +1,10 @@
+.load_more{
+  font-weight: bold;
+  color: #bbb;
+  font-size:18px;
+  width:100%;
+  display:none;
+  line-height:38px;
+  margin:0 auto;
+  text-align:center;
+}

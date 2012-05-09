@@ -1,0 +1,25 @@
+<% @blogs.each do |blog| %>
+  <div class="portfolio">
+    <div class="tagline_left">
+      <h2><%= blog.title%></h2>
+      <p>
+      作者: <span><%= blog.author%> |</span>
+      浏览:<span><%= blog.view_count%> |</span>
+      分类:<a href="#" rel="category">TODO:</a>
+      <div class="hidden-time"><%= blog.created_at.strftime('%Y-%m-%d %H:%M:%S')%></div>
+      </p>
+      <br/>
+      <%=simple_format truncate(preview_content(blog.content), :length=>380)%>
+      <div class="clear"></div>
+      <p><a href="#" class="read_more">阅读更多&hellip;</a></p>
+    </div>
+    <div class="tagline_right">
+      <% if(blog.video_url != nil&& !blog.video_url.empty?)%>
+         <embed src=<%= blog.video_url%> quality="high" width="500" height="400" align="middle" allowScriptAccess="always" allowfullscreen="true" type="application/x-shockwave-flash"></embed>
+      <% else%>
+        <a href=<%= image_large(blog.content).sub('large','original')%> data-gal="prettyPhoto"  target="_blank" title=<%= blog.title%>><img src=<%=image_large(blog.content)%> /></a>
+      <% end%>
+    </div>
+    <div class="clear"></div>
+  </div>
+<% end%>

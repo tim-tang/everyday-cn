@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Everyday [分享简单快乐]</title>
+    <%= stylesheet_link_tag 'elegant-press.css', :media=>'screen' %>
+    <%= javascript_include_tag 'elegant-press.js'%>
+    <%= javascript_include_tag 'application.js'%>
+    <%= csrf_meta_tag %>
+    <!--[if IE]><style>#header h1 a:hover{font-size:75px;}</style><![endif]-->
+  </head>
+  <body>
+    <%= render 'application/header'%>
+    <%= render 'application/search'%>
+    <%= render 'application/navigation'%>
+    <div class="main-container">
+      <div class="container1">
+        <article class="box" id="home_featured21">
+        <%= render 'application/hot_comments'%>
+        <%= render 'application/categories'%>
+        <%= render 'application/hot_topics'%>
+        <div class="clear"></div>
+        <br/>
+        </article>
+        <br/>
+        <br/>
+        <%= yield %>
+      </div>
+    </div>
+    <footer>
+    <p class="tagline_left">Copyright &copy; 2012 -Tim.Tang All Rights Reserved - <a href="#">www.everyday.com</a></p>
+    <p class="tagline_right">Design by <a href="http://tim.everyday-cn.com/" title="Pritesh Gupta" target="_blank" >Tim.Tang</a></p>
+    <br class="clear" />
+    </footer>
+    <br />
+    <br />
+  </body>
+</html>
