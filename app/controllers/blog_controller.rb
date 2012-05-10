@@ -1,4 +1,5 @@
 class BlogController < ApplicationController
+    add_breadcrumb "Home", :root_path
 
   def index
     @categories = Category.find(:all)
@@ -9,6 +10,7 @@ class BlogController < ApplicationController
 
   def show
     @blog = Blog.find(:one, :from=>"/blog/#{params[:id]}.xml")
+    add_breadcrumb "Show blog", show_path
   end
 
   def load

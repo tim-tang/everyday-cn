@@ -1,4 +1,5 @@
 class ArchiveController < ApplicationController
+  add_breadcrumb "Blog Archives", :archive_path
 
   def index
     currentTime = Time.now.strftime('%Y-%m-%d')
