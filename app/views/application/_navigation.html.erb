@@ -5,10 +5,10 @@
       <li class="active"><%= link_to '首页', root_path%></li>
       <li><a href="gallery.html">图片show</a></li>
       <li><%=link_to '博客归档', archive_path %></a></li>
-      <li><a href="guest_book.html">留言版</a></li>
-      <li><a href="about_us.html">关于我们</a></li>
-      <li><a href="http://news.everyday-cn.com" target="_blank">新鲜时讯</a></li>
-      <li class="last"><a href="http://tim.everyday-cn.com" target="_blank">TECH TALK</a></li>
+      <li><%=link_to '新鲜时讯', 'http://news.everyday-cn.com'%></li>
+      <li><%=link_to 'TECH TALK', 'http://tim.everyday-cn.com'%></li>
+      <li><%=link_to '关于我们', aboutus_path %></li>
+      <li class="last"><%=link_to '留言版', msgboard_path %></li>
     </ul>
     </nav>
     <div class="clear"></div>

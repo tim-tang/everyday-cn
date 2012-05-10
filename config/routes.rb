@@ -1,4 +1,5 @@
 EverydayCn::Application.routes.draw do
+
   root :to=>'blog#index'
 
   controller :blog do
@@ -12,9 +13,18 @@ EverydayCn::Application.routes.draw do
   end
 
   controller :archive do
-    get "archive" => :index, :as => :archive
+    get 'archive' => :index, :as => :archive
     get 'load/:id/archive'=>:load, :as => :load
   end
+
+  controller :msgboard do
+    get 'msgboard'=> :index, :as => :msgboard
+  end
+
+  controller :aboutus do
+    get 'aboutus'=>:index, :as => :aboutus
+  end
+
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
