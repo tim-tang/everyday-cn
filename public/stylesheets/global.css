@@ -8,3 +8,14 @@
   margin:0 auto;
   text-align:center;
 }
+.blog_img p img {
+  -moz-box-shadow: 1px 1px 3px #184569 ;
+  -webkit-box-shadow: 1px 1px 3px #184569;
+  box-shadow: 1px 1px 3px #184569;
+  width:900px;
+  height:700px;
+  overflow:hidden;
+}
+
+.blog_link a { text-decoration: none; }
+.blog_link a:hover{ color: #d06802; text-decoration:none;}

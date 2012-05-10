@@ -1,4 +1,8 @@
-<div class="box">
+<div class="box blog_img">
   <h1><%=@blog.title%></h1>
-  <p><%=simple_format load_content(@blog.content)%></p>
+  <% if(@blog.video_url != nil&& !@blog.video_url.empty?)%>
+    <p><embed src=<%= @blog.video_url%> quality="high" width="900" height="600" align="middle" allowScriptAccess="always" allowfullscreen="true" type="application/x-shockwave-flash"></embed></p>
+    <br>
+  <% end %>
+  <p align="center"><%=show_content(@blog.content)%></p>
 </div>

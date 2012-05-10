@@ -2,12 +2,19 @@ EverydayCn::Application.routes.draw do
   root :to=>'blog#index'
 
   controller :blog do
-    get 'load/:id'=>:load, :as => :load
+    get 'load/:id/blog'=>:load, :as => :load
     get 'show/:id'=>:show, :as => :show
   end
 
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
+  controller :category do
+    get 'category/:id/:catname'=>:index, :as => :category
+    get 'load/:id/category'=>:load, :as => :load
+  end
+
+  controller :archive do
+    get "archive" => :index, :as => :archive
+    get 'load/:id/archive'=>:load, :as => :load
+  end
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

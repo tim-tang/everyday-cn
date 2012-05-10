@@ -1,0 +1,8 @@
+<% @blogs.each do |blog|%>
+  <article>
+  <div class="hidden-time" style="display:none"><%= blog.created_at.strftime('%Y-%m-%d %H:%M:%S')%></div>
+  <div class="date"><span class="day"><%= blog.created_at.strftime('%d')%></span><span class="month"><%= blog.created_at.strftime('%b')%></span><span class="year"><%=blog.created_at.strftime('%Y')%></span></div>
+  <h2 style="margin-left:100px;"><%=link_to blog.title, show_path(blog)%></h2>
+  <hr/>
+  </article>
+<% end %>

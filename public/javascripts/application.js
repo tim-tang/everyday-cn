@@ -40,10 +40,12 @@ function startLoadMore() {
 function loadMore() {
   reentry = true;
   var lastItemID = $('.hidden-time:last').text();
+  var type = $('.hidden-category').text();
+  var categoryId = $('.hidden-categoryId').text();
   var scrollPos = $(document).scrollTop();
 
   $.ajax({
-    url: "/load/"+lastItemID,
+    url: "/load/"+lastItemID+"&"+categoryId+"/"+type,
     dataType: "script",
     type: "GET",
     success: function (data) {
@@ -66,17 +68,3 @@ function loadMore() {
               }
   });
 }
-
-function hookUpMouseEvent() {
-  $('.news-item').mouseenter(function() {
-    this.style.backgroundColor='#FDFFBF';
-    this.style.border='solid 1px #ddd';
-    var node = this;
-  });
-
-  $('.news-item').mouseleave(function() {
-    this.style.backgroundColor='#fff';
-    this.style.border='solid 1px #fff';
-  });
-}
-

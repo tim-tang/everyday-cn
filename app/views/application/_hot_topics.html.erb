@@ -1,9 +1,8 @@
-<div class="block last">
+<div class="block last blog_link">
   <h2>热门文章</h2>
   <ul id="list">
-    <li>Dapiensociis temper donec auctortortis cumsan et curabitur.</li>
-    <li>Condis lorem loborttis leo.</li>
-    <li>Portortornec condimenterdum eget consectetuer condis.</li>
-    <li>Puruselit mauris nulla hendimentesque elit semper nam a sapien urna sempus.</li>
+    <% @hot_topics.each do |topic|%>
+      <li><h6><%=link_to topic.title , {:action=>:show, :id=>topic.id, :controller=>:blog}%> (<%= topic.view_count%>人阅读)</h6></li>
+  <% end %>
   </ul>
 </div>

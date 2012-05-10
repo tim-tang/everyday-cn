@@ -1,6 +1,7 @@
 module ApplicationHelper
-  def load_content(content)
-    sanitize Redcarpet.new(content,:hard_wrap, :autolink, :no_intraemphasis).to_html
+  def show_content(content)
+    raw_html= simple_format(sanitize Redcarpet.new(content,:hard_wrap, :autolink, :no_intraemphasis).to_html).gsub("<br />","&nbsp;&nbsp;&nbsp;&nbsp;")
+    return raw_html.gsub("large_","original_")
   end
 
   def preview_content(content)
@@ -9,7 +10,7 @@ module ApplicationHelper
     preview.lines.grep(/\[([0-9])\]/) do |line|
       preview.gsub!(line,"")
     end
-    return preview
+    return simple_format(truncate(preview.insert(0, "&nbsp;&nbsp;&nbsp;&nbsp;"), :length=>380))
   end
 
   def image_large(content)
@@ -21,5 +22,8 @@ module ApplicationHelper
     end
   end
 
-
+  def render_blog_count(categoryId)
+    @topics= Blog.get_blogs_by_category(categoryId)
+    return @topics.size
+  end
 end

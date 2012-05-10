@@ -1,9 +1,9 @@
-<div class="block">
+<div class="block blog_link">
   <h2>博客分类</h2>
   <ul id="list">
-    <li>Dapiensociis temper donec auctortortis cumsan et curabitur.</li>
-    <li>Condis lorem loborttis leo.</li>
-    <li>Portortornec condimenterdum eget consectetuer condis.</li>
-    <li>Puruselit mauris nulla hendimentesque elit semper nam a sapien urna sempus.</li>
+    <% @categories.each do |cat|%>
+      <li><h6><%=link_to cat.category, {:action=>:index, :id=>cat.id, :catname=>cat.category, :controller=>:category}%>
+      </h6></li>
+  <% end %>
   </ul>
 </div>

@@ -1,4 +1,3 @@
-<%= stylesheet_link_tag 'global.css', :media=>'screen' %>
 <article class="box" id="home_featured21">
 <%= render 'application/hot_comments'%>
 <%= render 'application/categories'%>
@@ -11,7 +10,5 @@
 <div class="box" id="item-view">
   <%= render 'blog/more'%>
 </div>
-<div id="loading_more" class="load_more">
-  <p align="center"><%= image_tag 'ajax-loader.gif'%></p>
-  正在加载更多博客...
-</div>
+<div class="hidden-category" style="display:none">blog</div>
+<%= render 'application/load'%>

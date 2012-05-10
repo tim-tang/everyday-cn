@@ -1,0 +1,9 @@
+<h1>博客分类</h1>
+<div class="box blog_link" id="item-view">
+  <p id="tagline" style="text-align:center;font-size:36px;"><strong><%= @catname%></strong></p>
+  <br/>
+  <%= render 'category/more'%>
+</div>
+<div class="hidden-category" style="display:none">category</div>
+<div class="hidden-categoryId" style="display:none"><%=@categoryId%></div>
+<%= render 'application/load'%>
