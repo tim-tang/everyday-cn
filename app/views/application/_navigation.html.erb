@@ -2,7 +2,7 @@
   <div id="nav-container">
     <nav>
     <ul class="nav">
-    <li><%= link_to_unless_current('首页', root_path){|link| content_tag 'a', link, :style=>'background:#e0e0e0'}%></li>
+    <li><%=link_to_unless_current('首页', root_path){|link| content_tag 'a', link, :style=>'background:#e0e0e0'}%></li>
     <li><%=link_to_unless_current('图片show', gallery_path){|link| content_tag 'a', link, :style=>'background:#e0e0e0'}%></li>
     <li><%=link_to_unless_current('博客归档', archive_path){|link| content_tag 'a', link, :style=>'background:#e0e0e0'}%></a></li>
     <li><%=link_to_unless_current('新鲜时讯', 'http://news.everyday-cn.com'){|link| content_tag 'a', link, :style=>'background:#e0e0e0'}%></li>

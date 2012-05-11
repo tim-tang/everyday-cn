@@ -31,12 +31,4 @@ module ApplicationHelper
      return url
   end
 
-  def render_navigation
-    link_to_unless_current("Home", root_path){|link| content_tag 'li', link, :class=>'active'}
-    link_to_unless_current "Photo", gallery_path
-    content_tag 'li', aa, :class=>'active'
-    content_tag 'li', bb, :class=>'active'
-    return cc
-  end
-
 end
