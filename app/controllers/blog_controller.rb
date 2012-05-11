@@ -10,11 +10,13 @@ class BlogController < ApplicationController
 
   def show
     @blog = Blog.find(:one, :from=>"/blog/#{params[:id]}.xml")
-    add_breadcrumb "Show blog", show_path
+    Blog.put("/blog/#{params[:id]}/sync")
+    add_breadcrumb "Reading Blog", show_path
   end
 
   def load
     param = params[:id].split(" ")
     @blogs = Blog.find(:all, :from =>"/blogs/#{param[0]}.xml")
   end
+
 end

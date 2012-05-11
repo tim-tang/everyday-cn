@@ -26,4 +26,10 @@ module ApplicationHelper
     @topics= Blog.get_blogs_by_category(categoryId)
     return @topics.size
   end
+
+  def render_photo(photo, type)
+     url = "http://www.everyday-cn.com/system/pictures/#{photo.id}/#{type}_#{photo.avatar_file_name}"
+     return url
+  end
+
 end

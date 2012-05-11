@@ -4,13 +4,14 @@
       <!-- TODO: -->
     </div>
     <div class="tagline_right">
-      <form action="#" method="post">
+
+      <%= form_tag search_path, :method => :get do %>
         <fieldset>
           <legend>Site Search</legend>
-          <input type="text" value="Search Our Website&hellip;"   onfocus="if (this.value == 'Search Our Website&hellip;') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search Our Website&hellip;';}" />
-          <input type="submit" name="go" id="go" value="搜索" />
+          <%= text_field_tag :search, params[:search], :value=>"请输入关键字...", :onfocus=>"if (this.value == '请输入关键字...') {this.value = '';}", :onblur=>"if (this.value == '') {this.value = '请输入关键字...';}"%>
+        <%= submit_tag "搜索", :name => 'Go', :id=>"go"%>
         </fieldset>
-      </form>
+      <% end %>
     </div>
     <br class="clear" />
   </div>

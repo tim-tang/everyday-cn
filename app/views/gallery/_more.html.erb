@@ -1,0 +1,7 @@
+<ul>
+  <% @galleries.each do |photo|%>
+    <li class="last", style="margin-left:13px;"><a data-gal="prettyPhoto[gallery2]" href="<%=render_photo(photo,'original')%>" title="<%= photo.desc%>"><img src="<%= render_photo(photo,'large')%>" width="260" height="190" alt="<%= photo.desc%>" /></a></li>
+  <div class="hidden-time" style="display:none"><%= photo.created_at.strftime('%Y-%m-%d %H:%M:%S')%></div>
+  <% end %>
+</ul>
+<br class="clear" />

@@ -1,5 +1,4 @@
 EverydayCn::Application.routes.draw do
-
   root :to=>'blog#index'
 
   controller :blog do
@@ -7,9 +6,18 @@ EverydayCn::Application.routes.draw do
     get 'show/:id'=>:show, :as => :show
   end
 
+  controller :search do
+    get 'search'=> :search, :as => :search
+  end
+
   controller :category do
     get 'category/:id/:catname'=>:index, :as => :category
     get 'load/:id/category'=>:load, :as => :load
+  end
+
+  controller :gallery do
+    get 'gallery'=>:index, :as =>:gallery
+    get 'load/:id/gallery'=>:load, :as => :load
   end
 
   controller :archive do
