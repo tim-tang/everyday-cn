@@ -3,7 +3,6 @@ module ApplicationHelper
     raw_html= simple_format(sanitize Redcarpet.new(content,:hard_wrap, :autolink, :no_intraemphasis).to_html).gsub("<br />","&nbsp;&nbsp;&nbsp;&nbsp;")
     return raw_html.gsub("large_","original_")
   end
-
   def preview_content(content)
     #content.lines.grep(/\!\[\]\[([0-9])\]/) do |line|
     preview = content.clone
@@ -30,6 +29,14 @@ module ApplicationHelper
   def render_photo(photo, type)
      url = "http://www.everyday-cn.com/system/pictures/#{photo.id}/#{type}_#{photo.avatar_file_name}"
      return url
+  end
+
+  def render_navigation
+    link_to_unless_current("Home", root_path){|link| content_tag 'li', link, :class=>'active'}
+    link_to_unless_current "Photo", gallery_path
+    content_tag 'li', aa, :class=>'active'
+    content_tag 'li', bb, :class=>'active'
+    return cc
   end
 
 end
