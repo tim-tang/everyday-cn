@@ -14,6 +14,9 @@
   <p align="center"><%=show_content(@blog.content)%></p>
 </div>
 
+<p><%=link_to "下一篇: #{@next_blog.title}", show_path(@next_blog), :class=>"read_more"%></p>
+<br/>
+
 <div id="disqus_thread"></div>
 <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

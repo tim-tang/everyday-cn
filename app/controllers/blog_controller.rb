@@ -11,6 +11,7 @@ class BlogController < ApplicationController
   def show
     @blog = Blog.find(:one, :from=>"/blog/#{params[:id]}.xml")
     Blog.put("/blog/#{params[:id]}/sync")
+    @next_blog = Blog.find(:one, :from=>"/blog/#{params[:id]}/next.xml")
     add_breadcrumb "Reading Blog", show_path
   end
 
