@@ -1,7 +1,7 @@
 <% @blogs.each do |blog| %>
   <div class="portfolio">
     <div class="tagline_left blog_link">
-      <h2><%=link_to blog.title, show_path(blog)%></h2>
+      <h2><strong><%=link_to blog.title, show_path(blog)%></strong></h2>
       <div><p id="tagline2">作者:<%= blog.author%></p></div>
       <div><p id="tagline2">浏览:<%= blog.view_count%></p></div>
       <% @cat = Category.get_category(blog.constant_id)%>
@@ -11,7 +11,7 @@
       <div class="hidden-time" style="display:none"><%= blog.created_at.strftime('%Y-%m-%d %H:%M:%S')%></div>
       <%=preview_content(blog.content)%>
       <div class="clear"></div>
-      <p><%=link_to '阅读更多', show_path(blog), :class=>"read_more"%></p>
+      <p><%=link_to '阅读更多...', show_path(blog), :class=>"read_more"%></p>
     </div>
     <div class="tagline_right">
       <% if(blog.video_url != nil&& !blog.video_url.empty?)%>
