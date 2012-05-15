@@ -1,7 +1,7 @@
 module ApplicationHelper
   def show_content(content)
     raw_html= simple_format(sanitize Redcarpet.new(content,:hard_wrap, :autolink, :no_intraemphasis).to_html).gsub("<br />","&nbsp;&nbsp;&nbsp;&nbsp;")
-    return raw_html.gsub("large_","original_")
+    return raw_html.gsub("large_","original_").gsub("www.everyday-cn.com","173.255.253.43")
   end
 
   def preview_content(content)
@@ -16,7 +16,7 @@ module ApplicationHelper
   def image_large(content)
     content.lines.grep(/http:/) do |line|
      if line.include?("[1]:")
-        return line.gsub("[1]:","").strip
+        return line.gsub("[1]:","").gsub("www.everyday-cn.com","173.255.253.43").strip
      end
      return line.strip.slice(5,line.length)
     end
