@@ -4,7 +4,7 @@ class CategoryController < ApplicationController
   def index
     @catname = params[:catname]
     @categoryId = params[:id]
-    currentTime = Time.now.strftime('%Y-%m-%d')
+    currentTime = (Time.now+86400).strftime('%Y-%m-%d')
     @blogs=Blog.get_blogs_by_category(params[:id],currentTime)
     add_breadcrumb "Category", :category_path
   end
