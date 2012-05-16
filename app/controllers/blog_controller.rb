@@ -4,7 +4,7 @@ class BlogController < ApplicationController
   def index
     @categories = Category.find(:all)
     @hot_topics = Blog.find(:all, :from=>"/hot/topics.xml")
-    currentTime = Time.now.strftime('%Y-%m-%d')
+    currentTime = (Time.now+86400).strftime('%Y-%m-%d')
     @blogs = Blog.find(:all, :from =>"/blogs/#{currentTime}.xml")
   end
 
