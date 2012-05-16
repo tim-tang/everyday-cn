@@ -10,21 +10,20 @@
     <%= stylesheet_link_tag 'elegant-press.css', :media=>'screen' %>
     <%= stylesheet_link_tag 'global.css', :media=>'screen' %>
     <%= javascript_include_tag 'elegant-press.js'%>
+    <%= javascript_include_tag 'application.js'%>
+    <%= csrf_meta_tag %>
+    <!--[if IE]><style>#header h1 a:hover{font-size:75px;}</style><![endif]-->
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-23115957-1']);
       _gaq.push(['_trackPageview']);
 
       (function() {
-       var ga = document.createElement('script'); ga.type = 'text/javascript'; g                                                                                        a.async = true;
-       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http:                                                                                        //www') + '.google-analytics.com/ga.js';
-       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBe                                                                                        fore(ga, s);
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
        })();
      </script>
-
-    <%= javascript_include_tag 'application.js'%>
-    <%= csrf_meta_tag %>
-    <!--[if IE]><style>#header h1 a:hover{font-size:75px;}</style><![endif]-->
   </head>
   <body>
     <%= render 'application/header'%>
