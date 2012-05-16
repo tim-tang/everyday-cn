@@ -10,7 +10,7 @@ module ApplicationHelper
     preview.lines.grep(/\[([0-9])\]/) do |line|
       preview.gsub!(line,"")
     end
-    return simple_format(truncate(preview.insert(0, "&nbsp;&nbsp;&nbsp;&nbsp;"), :length=>380))
+    return simple_format(truncate(preview.insert(0, "&nbsp;&nbsp;&nbsp;&nbsp;"), :length=>260))
   end
 
   def image_large(content)
