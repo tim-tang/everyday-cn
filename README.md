@@ -1,4 +1,6 @@
-everyday-cn
-===========
+Everyday Family Blog
+---
 
-Everyday-cn for everyday v2.0
+[**Everyday**](http://www.everyday-cn.com) 
+
+## USED RUBY ON RAILS TECHNOLOGY AND HOSTED ON LINODE VPS.
